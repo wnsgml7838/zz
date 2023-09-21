@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tradi: 전통시장 온라인 플랫폼</title>
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/128/7756/7756209.png">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Gowun+Dodum&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Gloria+Hallelujah&family=Gowun+Dodum&family=Shrikhand&display=swap" rel="stylesheet">
+   
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+    <style>
+    .logo {
+        display: inline-block;
+        margin-left: 630px;
+        margin-top: 20px;
+        color: #000000; /* 로고 색상을 빨간색(#ff0000)으로 변경 */
+        font-family: 'Shrikhand', cursive;
+        font-size: 50px; /* 폰트 크기를 18px로 변경 */
+        font-weight: bold; /* 폰트 굵기를 굵게(bold)로 변경 */
+        }        
+
+    .redpoint{
+        color : #FB5607;
+    }
+
+
+    .text-container h1 {
+        position : relative;
+        top : 30px ;
+        left : 550px;
+        font-family: 'Gowun Dodum', sans-serif;
+        font-size: 50px; /* 글씨 크기 조절 */
+        font-weight: bold; /* 폰트 굵기를 굵게(bold)로 변경 */
+    }
+
+    .traditional-market-list {
+        position : relative;
+        top :60px;
+        left : 250px;
+        background-color: white; /* 배경색 변경 */
+        padding: 10px; /* 내부 패딩 조정 */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+        width: 30%;
+        max-height: 500px;
+        overflow-y: auto;
+        border-radius: 10px; /* 모서리를 둥글게 만듦 */
+        font-family: 'Gowun Dodum', sans-serif;
+    }
+
+    .traditional-market-list button {
+        padding: 8px 10px; /* 버튼 패딩 조정 */
+        border: none;
+        border-radius: 5px;
+        background-color: #FB5607;
+        color: white;
+        cursor: pointer;
+        width: 100%; /* 버튼 너비를 100%로 설정 */
+        text-align: left; /* 텍스트를 왼쪽 정렬 */
+        font-family: 'Gowun Dodum', sans-serif;
+    }
+    .traditional-market-list button:hover {
+        background-color: #0056b3; /* 호버 시 배경색 변경 */
+        font-family: 'Gowun Dodum', sans-serif;
+    }
+    /* 전통시장 목록 제목 스타일 */
+    .traditional-market-list h3 {
+        margin: 0 0 10px; /* 제목 아래 여백 추가 */
+        font-family: 'Gowun Dodum', sans-serif;
+    }
+    /* 전통시장 목록 ul 스타일 */
+    .traditional-market-list ul {
+        list-style-type: none;
+        font-family: 'Gowun Dodum', sans-serif;
+        padding: 0;
+    }
+    /* 전통시장 목록 li 스타일 */
+    .traditional-market-list li {
+        font-family: 'Gowun Dodum', sans-serif;
+        margin-bottom: 7px; /* 간격 늘림 */
+    }
+
+    .traditional-market-button a {
+    color: #ffffff; /* 흰색으로 글자 색 변경 */
+}
+
+
+
+
+
+    
+    .traditional-market-list1 {
+        position : relative;
+        top :-440px;
+        left : 800px;
+        background-color: white; /* 배경색 변경 */
+        padding: 10px; /* 내부 패딩 조정 */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+        width: 30%;
+        max-height: 450px;
+        overflow-y: auto;
+        border-radius: 10px; /* 모서리를 둥글게 만듦 */
+        font-family: 'Gowun Dodum', sans-serif;
+    }
+
+    .traditional-market-list1 button {
+        padding: 8px 10px; /* 버튼 패딩 조정 */
+        border: none;
+        border-radius: 5px;
+        background-color: #FB5607;
+        color: white;
+        cursor: pointer;
+        width: 100%; /* 버튼 너비를 100%로 설정 */
+        text-align: left; /* 텍스트를 왼쪽 정렬 */
+        font-family: 'Gowun Dodum', sans-serif;
+    }
+    .traditional-market-list1 button:hover {
+        background-color: #0056b3; /* 호버 시 배경색 변경 */
+        font-family: 'Gowun Dodum', sans-serif;
+    }
+    /* 전통시장 목록 제목 스타일 */
+    .traditional-market-list1 h3 {
+        margin: 0 0 10px; /* 제목 아래 여백 추가 */
+        font-family: 'Gowun Dodum', sans-serif;
+    }
+    /* 전통시장 목록 ul 스타일 */
+    .traditional-market-list1 ul {
+        list-style-type: none;
+        font-family: 'Gowun Dodum', sans-serif;
+        padding: 0;
+    }
+    /* 전통시장 목록 li 스타일 */
+    .traditional-market-list1 li {
+        font-family: 'Gowun Dodum', sans-serif;
+        margin-bottom: 7px; /* 간격 늘림 */
+    }
+
+    .traditional-all a {
+        color: inherit; /* 링크의 색상을 상속받아 유지 */
+        text-decoration: none; /* 링크의 밑줄 제거 */
+    }
+
+
+
+    
+    .traditional-all {
+        position : relative;
+        top :-400px;
+        left : 800px;
+        border: none;
+        background-color: white; /* 배경색 변경 */
+        padding: 10px; /* 내부 패딩 조정 */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+        width: 30%;
+        max-height: 450px;
+        overflow-y: auto;
+        border-radius: 10px; /* 모서리를 둥글게 만듦 */
+        font-family: 'Gowun Dodum', sans-serif;
+    }
+
+    .traditional-all button {
+        padding: 8px 10px; /* 버튼 패딩 조정 */
+        border: none;
+        border-radius: 5px;
+        background-color: #FB5607;
+        color: white;
+        cursor: pointer;
+        width: 100%; /* 버튼 너비를 100%로 설정 */
+        text-align: left; /* 텍스트를 왼쪽 정렬 */
+        font-family: 'Gowun Dodum', sans-serif;
+    }
+    .traditional-all button:hover {
+        background-color: #0056b3; /* 호버 시 배경색 변경 */
+        font-family: 'Gowun Dodum', sans-serif;
+    }
+    /* 전통시장 목록 제목 스타일 */
+    .traditional-all h3 {
+        margin: 0 0 10px; /* 제목 아래 여백 추가 */
+        font-family: 'Gowun Dodum', sans-serif;
+    }
+    /* 전통시장 목록 ul 스타일 */
+    .traditional-all ul {
+        list-style-type: none;
+        font-family: 'Gowun Dodum', sans-serif;
+        padding: 0;
+    }
+    /* 전통시장 목록 li 스타일 */
+    .traditional-all li {
+        font-family: 'Gowun Dodum', sans-serif;
+        margin-bottom: 7px; /* 간격 늘림 */
+    }
+
+
+    </style>
+
+
+
+</style>
+        
+
+</head>
+<body>
+
+    <div class="header">
+        <div class="logo" id="tradLogo">Trad<span class='redpoint'>!</span></div>
+        </div>
+    </div>
+
+    <div class="text-container">
+        <h1>치킨 맛집 시장 추천</h1>
+    </div>
+    
+    <div class="traditional-market-list" id="traditionalMarketList" style="display: block">
+        <h3>전통시장 목록</h3>
+        <ul>
+            <!-- 전통시장 목록의 항목들이 들어갈 자리 -->
+            <li><button class="traditional-market-button"><a href="3.html" style="outline: none;">중앙시장</a></button></li>
+            <li><button class="traditional-market-button">도마큰시장</button></li>
+            <li><button class="traditional-market-button">한민시장</button></li>
+            <li><button class="traditional-market-button">신탄진시장</button></li>
+            <li><button class="traditional-market-button">문창전통시장</button></li>
+            <li><button class="traditional-market-button">중리전통시장</button></li>
+            <li><button class="traditional-market-button">태평전통시장</button></li>
+            <li><button class="traditional-market-button">인동시장</button></li>
+            <li><button class="traditional-market-button">유천전통시장</button></li>
+            <li><button class="traditional-market-button">신도꼼지락시장</button></li>
+            <li><button class="traditional-market-button">법동시장</button></li>
+            <li><button class="traditional-market-button">부사전통시장</button></li>
+            <li><button class="traditional-market-button">오류전통시장</button></li>
+            <li><button class="traditional-market-button">송강전통시장</button></li>
+            <li><button class="traditional-market-button">용운시장</button></li>
+            <li><button class="traditional-market-button">산성전통시장</button></li>
+            <li><button class="traditional-market-button">가양시장</button></li>
+            <li><button class="traditional-market-button">송촌시장</button></li>
+            <li><button class="traditional-market-button">용두전통시장</button></li>
+            <li><button class="traditional-market-button">대전상가시장</button></li>
+        </ul>
+      </div>
+
+      <div class="traditional-market-list1" id="traditionalMarketList1" style="display: block">
+        <h3>상점 순위</h3>
+        <ul>
+            <!-- 전통시장 목록의 항목들이 들어갈 자리 -->
+            <li><button class="traditional-market-button1">스모프치킨</button></li>
+            <li><button class="traditional-market-button1">서울치킨</button></li>
+            <li><button class="traditional-market-button1">명규네 옛날 통닭</button></li>
+            <li><button class="traditional-market-button1">장군 닭집</button></li>
+        </ul>
+      </div>
+    
+      <button class="traditional-all"><a href="2.html" style="outline: none;">전체시장 보러가기</a></button>
+</body>
+<script>
+    
+    
+</script>
+</html>
