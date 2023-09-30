@@ -16,6 +16,12 @@
     <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Gloria+Hallelujah&family=Gowun+Dodum&family=Shrikhand&display=swap" rel="stylesheet">
     <style>/* 여기에 페이지의 스타일을 정의하는 CSS 코드 */
 
+        .All_container {
+            width: 1465px; /* 1470px를 rem 단위로 변환한 값 */
+            margin: 0 auto;
+            height: 770px; /* 769px를 rem 단위로 변환한 값 */
+            position: relative; /* .All_container를 상대 위치로 설정 */
+        }
         /* 로고 스타일 */
         .logo {
         display: inline-block;
@@ -418,7 +424,7 @@
     </style>
 </head>
 <body>
-    
+<div class="All_container">
     <div class="traditional-event" id="traditionalEvent">
         <img src="https://i.pinimg.com/736x/42/d3/82/42d382e7d91febcc50b28af6182313ed.jpg" alt="전통 행사 이미지1" width="270" height="400">
     </div>
@@ -475,7 +481,7 @@
         </div>
         <div class="gauge-text" id="gaugeText"></div>
     </div>
-
+</div>
     <!-- Leaflet 라이브러리 스크립트 링크 -->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script>

@@ -27,6 +27,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
     
     <style>
+    .All_container {
+            width: 1465px; /* 1470px를 rem 단위로 변환한 값 */
+            margin: 0 auto;
+            height: 770px; /* 769px를 rem 단위로 변환한 값 */
+            position: relative; /* .All_container를 상대 위치로 설정 */
+    }
     .logo {
         display: inline-block;
         margin-left: 630px;
@@ -204,6 +210,7 @@
 
 </head>
 <body>
+<div class="All_container">
     <div class="header">
         <div class="logo" id="tradLogo">Trad<span class='redpoint'>!</span></div>
         </div>
@@ -252,5 +259,6 @@
       </div>
     
       <button class="traditional-all"><a href="대전전체시장페이지.html" style="outline: none;">전체시장 보러가기</a></button>
+</div>
 </body>
 </html>
