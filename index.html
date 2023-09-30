@@ -45,7 +45,7 @@
             .leaflet-container { font-size: 1rem; }
             .text-container {
                     width: 100%;
-                    height: 100vh;
+                    height: 800px;
                     display: flex;
                     justify-content: center;
                     align-items: center;
@@ -55,6 +55,10 @@
 
             .text {
                 color: white;
+                position : absolute;
+                top : 200px;
+                left: 430px;
+                width: 100%;
                 font-size: 200px;
                 font-family: 'Shrikhand', cursive;
                 opacity: 1;
@@ -62,8 +66,9 @@
             }
             .text2 {
                 position : absolute;
-                top: 500px;
-                left : 360px;
+                top: 300px;
+                left : -100px;
+                width: 100%;
                 color: black;
                 font-size: 30px;
                 font-family: 'Gowun Dodum', sans-serif;
@@ -75,7 +80,7 @@
             }
             .text-container2 {
                     width: 100%;
-                    height: 100vh;
+                    height: 700px;
                     display: flex;
                     justify-content: center;
                     align-items: center;
@@ -83,10 +88,10 @@
                     transition: background-color 1s ease;
                 }
 
-            .tradishop, .tradifood {
-                position : relative;
-                top :40px;
-                left: 200px;
+            .tradishop{
+                position : absolute;
+                top :1040px;
+                left: 100px;
                 width: 500px;
                 height: 100px;
                 background-color: #FB5607;
@@ -100,11 +105,28 @@
                 font-size: 40px; /* 글씨 크기 조절 */
                 font-family: 'Gowun Dodum', sans-serif;
                 }
+            .tradifood {
+                position : absolute;
+                top :1040px;
+                left: 800px;
+                width: 500px;
+                height: 100px;
+                background-color: #FB5607;
+                color: #fff;
+                text-align: center;
+                line-height: 100px;
+                margin: 40px;
+                cursor: pointer;
+                opacity: 1; /* 초기에는 보이도록 설정 */
+                transition: opacity 0.5s ease; /* opacity 변화를 0.5초 동안 부드럽게 효과를 줍니다. */
+                font-size: 40px; /* 글씨 크기 조절 */
+                font-family: 'Gowun Dodum', sans-serif;
+            }
 
             .traditional-all {
-                position : relative;
-                top :1150px;
-                left:-550px;
+                position : absolute;
+                top :2250px;
+                left:500px;
                 background-color: white; /* 배경색 변경 */
                 padding: 10px; /* 내부 패딩 조정 */
                 width: 30%;
