@@ -36,6 +36,12 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
+            .All_container {
+            width: 1465px; /* 1470px를 rem 단위로 변환한 값 */
+            margin: 0 auto;
+            height: 400px; /* 769px를 rem 단위로 변환한 값 */
+            position: relative; /* .All_container를 상대 위치로 설정 */
+            }
             .leaflet-container { font-size: 1rem; }
             .text-container {
                     width: 100%;
@@ -225,7 +231,7 @@
         
 </head>
 <body>
-
+<div class="All_container">
     <div id="content"></div>
     <div class="text-container">
         <p class="text">Trad<span class='redpoint'>!</span></p>
@@ -269,7 +275,7 @@
                 <button>만두</button>
             </ul>  
     </div>
-    
+</div>
 </body>
 <script>
     
